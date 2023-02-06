@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="margin-left:35%;">
+    <div class="row">
+        <div class="col md-8">
+
+    <div class="card" style="width: 18rem;">
+  <img src="{{books.img.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h5 class="text-center"><b>{{books.name}}</b></h5>
+      <p><i> {{books.author}}</i></p>
+    <p class="card-text text-center">{{books.desc}}</p>
+
+  </div>
+</div>
+        </div>
+        </div>
+</div>
+{% endblock %}
+</html>

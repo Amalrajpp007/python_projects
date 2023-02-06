@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for j in books %}
+        <div class="col md-3">
+        <div class="card" style="width: 18rem;">
+  <img src="{{j.img.url}}" class="card-img-top " alt="..." style="height:200px;width:200px;margin:17%">
+  <div class="card-body">
+    <h4 class="card-title text-center">{{j.name}}</h4>
+    <br>
+      <b>{{j.author}}</b>
+
+    </br>
+      <p style="margin-left:4%;font-size:14px;"> {{j.desc}}</p>
+    <a href="{% url 'bkapp:update' j.id %}" class="btn btn-primary" style="margin-left:4%">Update</a>
+      <a href="{% url 'bkapp:delete' j.id %}" class="btn btn-danger">Delete</a>
+      <a href="{% url 'bkapp:details' j.id %}" class="btn btn-warning">Details</a>
+
+  </div>
+
+
+    </div>
+    </div>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock %}
