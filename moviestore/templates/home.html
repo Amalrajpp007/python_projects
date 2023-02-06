@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container" >
+    <div class="row">
+    {% for i in movies %}
+
+    <div class="card bg-light border-primary" style="width: 18rem; margin-top:1%; margin-left:1%;">
+        <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" style="height:200px;width:287px;">
+        <div class="card-body" style="height:220px;">
+            <br><b>{{i.name}}</b>
+            <br> <i>{{i.desc}}</i>
+            <br>Year: {{i.year}}
+            <br><a href="{% url 'mvapp:details' i.id %}" class="btn btn-success">details</a>
+                <a href="{% url 'mvapp:update' i.id %}" class="btn btn-warning">update</a>
+                <a href="{% url 'mvapp:delete' i.id %}" class="btn btn-danger">Delete</a>
+        </div>
+
+
+    </div>
+ {% endfor %}
+    </div></div>
+</div>
+{% endblock %}
